@@ -10,7 +10,10 @@ public class Flammable : MonoBehaviour
     public List<Flammable> flameableObjectsinRadius;
 
     public float heatRadius = 5.0f;
-    public float heatRate = 1.0f;
+    public float heatDisperseRate = -0.5f;
+    public float heatFireRate = 1.0f;
+    [SerializeField] //For test only
+    private float heatRate = 0.0f;
 
     [SerializeField]
     private float temperature = 20.0f;
@@ -19,7 +22,7 @@ public class Flammable : MonoBehaviour
         get { return temperature; }
         set
         {
-            value = Mathf.Clamp(value, 0, maxTemperature);
+            value = Mathf.Clamp(value, 20, maxTemperature);
 
             if (value == temperature) return;
             temperature = value;
@@ -41,6 +44,7 @@ public class Flammable : MonoBehaviour
             if (value == isOnFire) return;
 
             isOnFire = value;
+            SpreadFire(value);
             SetFireParticle(value);
         }
     }
@@ -49,6 +53,8 @@ public class Flammable : MonoBehaviour
     {
         StartParticleSystem();
         FindObjectInHeatRadius();
+
+        heatRate = heatDisperseRate;
     }
 
     private void StartParticleSystem()
@@ -67,7 +73,8 @@ public class Flammable : MonoBehaviour
         foreach (Collider c in hitColliders)
         {
             Flammable item = c.GetComponentInParent<Flammable>();
-            flameableObjectsinRadius.Add(item);
+            if(item != this)
+                flameableObjectsinRadius.Add(item);
         }
     }
 
@@ -79,14 +86,26 @@ public class Flammable : MonoBehaviour
 
     void Update ()
     {
-        SpreadFire();
+        this.Temerature += heatRate;
     }
 
-    private void SpreadFire()
+    private void SpreadFire(bool onFire)
     {
-        if(flameableObjectsinRadius.Exists(x => x.IsOnFire))
+        if(onFire)
         {
-            this.Temerature += heatRate;
+            this.heatRate += heatFireRate;
+            foreach(Flammable f in flameableObjectsinRadius)
+            {
+                f.ChangeHeatRate(heatFireRate);
+            }
+        }
+        else
+        {
+            this.heatRate -= heatFireRate;
+            foreach (Flammable f in flameableObjectsinRadius)
+            {
+                f.ChangeHeatRate(-heatFireRate);
+            }
         }
     }
 
@@ -94,6 +113,13 @@ public class Flammable : MonoBehaviour
     {
         IsOnFire = Temerature >= fireTemperature;
     }
+
+    public void ChangeHeatRate(float value)
+    {
+        heatRate += value;
+    }
+
+    #region Particle system control
 
     private void SetFireParticle(bool onFire)
     {
@@ -124,4 +150,6 @@ public class Flammable : MonoBehaviour
                 p.Stop(true);
         }
     }
+
+    #endregion
 }
