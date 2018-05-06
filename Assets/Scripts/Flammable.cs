@@ -10,14 +10,14 @@ public class Flammable : MonoBehaviour
     public List<Flammable> flameableObjectsinRadius;
 
     public float heatRadius = 5.0f;
-    public float heatDisperseRate = -0.5f;
+    //public float heatDisperseRate = -0.5f;
     public float heatFireRate = 1.0f;
     [SerializeField] //For test only
     private float heatRate = 0.0f;
 
     [SerializeField]
     private float temperature = 20.0f;
-    public float Temerature
+    public float Temperature
     {
         get { return temperature; }
         set
@@ -51,10 +51,10 @@ public class Flammable : MonoBehaviour
     
 	void Start ()
     {
-        StartParticleSystem();
+        //StartParticleSystem();
         FindObjectInHeatRadius();
 
-        heatRate = heatDisperseRate;
+        //heatRate = heatDisperseRate;
     }
 
     private void StartParticleSystem()
@@ -67,13 +67,15 @@ public class Flammable : MonoBehaviour
                 psFire.Add(p);
         }
     }
-    private void FindObjectInHeatRadius()
+
+    public void FindObjectInHeatRadius()
     {
+        
         Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, heatRadius, LayerMask.GetMask("Flameable"));
         foreach (Collider c in hitColliders)
         {
             Flammable item = c.GetComponentInParent<Flammable>();
-            if(item != this)
+            if(item != this && !flameableObjectsinRadius.Contains(item))
                 flameableObjectsinRadius.Add(item);
         }
     }
@@ -86,7 +88,7 @@ public class Flammable : MonoBehaviour
 
     void Update ()
     {
-        this.Temerature += heatRate;
+        this.Temperature += heatRate;
     }
 
     private void SpreadFire(bool onFire)
@@ -111,7 +113,7 @@ public class Flammable : MonoBehaviour
 
     private void CheckTemperature()
     {
-        IsOnFire = Temerature >= fireTemperature;
+        IsOnFire = Temperature >= fireTemperature;
     }
 
     public void ChangeHeatRate(float value)
@@ -139,6 +141,12 @@ public class Flammable : MonoBehaviour
         {
             if(!p.isPlaying)
                 p.Play(true);
+
+            if(!UnityEditor.EditorApplication.isPlaying)
+            {
+                var main = p.main;
+                main.playOnAwake = true;
+            }
         }
     }
 
@@ -148,6 +156,12 @@ public class Flammable : MonoBehaviour
         {
             if (!p.isStopped)
                 p.Stop(true);
+
+            if (!UnityEditor.EditorApplication.isPlaying)
+            {
+                var main = p.main;
+                main.playOnAwake = false;
+            }
         }
     }
 

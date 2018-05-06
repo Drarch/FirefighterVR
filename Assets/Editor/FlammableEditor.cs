@@ -16,15 +16,18 @@ public class FlammableEditor : Editor {
 
         if (GUILayout.Button(item.IsOnFire ? "Put out Fire" : "Set on Fire"))
         {
+            Undo.RecordObject(target, "Is On Fire Button");
+
             if (item.IsOnFire)
             {
-                item.Temerature = 20;
+                item.Temperature = 20;
                 item.IsOnFire = false;
                 item.StopFire();
             }
             else
             {
-                item.Temerature = item.fireTemperature;
+                item.FindObjectInHeatRadius();
+                item.Temperature = item.fireTemperature;
                 item.IsOnFire = true;
                 item.StartFire();
             }

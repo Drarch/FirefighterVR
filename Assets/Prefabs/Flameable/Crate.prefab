@@ -153,8 +153,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1657470626935798}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.6962996, y: 0.0011901665, z: 0.751296}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4529156133352594}
@@ -291,14 +291,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc839f2bf1f97604f8d77082b3133cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  psFire: []
+  psFire:
+  - {fileID: 198007746417739572}
   flameableObjectsinRadius: []
   heatRadius: 5
-  editorTemperature: 20
+  heatFireRate: 1
+  heatRate: -0.5
   temperature: 20
   fireTemperature: 600
   maxTemperature: 1000
-  editorIsOnFire: 0
+  isOnFire: 0
 --- !u!198 &198007746417739572
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -359,7 +361,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1490256254
+  randomSeed: -368682748
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3720,7 +3722,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 252585262
+  randomSeed: -285063902
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7081,7 +7083,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1312505866
+  randomSeed: 3095536
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -10442,7 +10444,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -887975389
+  randomSeed: 924118975
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -13803,7 +13805,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 602865954
+  randomSeed: 2062612080
   InitialModule:
     serializedVersion: 3
     enabled: 1

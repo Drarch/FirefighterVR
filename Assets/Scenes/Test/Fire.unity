@@ -8574,6 +8574,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 341371123}
     m_Modifications:
+    - target: {fileID: 114922350454281184, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: flameableObjectsinRadius.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4187547130409654, guid: 4c7aa159f677699469842b68d0078597, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.6962996
@@ -8609,6 +8614,71 @@ Prefab:
     - target: {fileID: 1657470626935798, guid: 4c7aa159f677699469842b68d0078597, type: 2}
       propertyPath: m_Name
       value: Crate M
+      objectReference: {fileID: 0}
+    - target: {fileID: 198028761852572586, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198028761852572586, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: randomSeed
+      value: 753171905
+      objectReference: {fileID: 0}
+    - target: {fileID: 198007746417739572, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198007746417739572, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: randomSeed
+      value: -1894934847
+      objectReference: {fileID: 0}
+    - target: {fileID: 198430708290921038, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198430708290921038, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: randomSeed
+      value: 117285279
+      objectReference: {fileID: 0}
+    - target: {fileID: 198642979085278938, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198642979085278938, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: randomSeed
+      value: -809739006
+      objectReference: {fileID: 0}
+    - target: {fileID: 198810291507904162, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198810291507904162, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: randomSeed
+      value: -321919778
+      objectReference: {fileID: 0}
+    - target: {fileID: 114922350454281184, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: heatRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114922350454281184, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: temperature
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 114922350454281184, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: isOnFire
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c7aa159f677699469842b68d0078597, type: 2}
