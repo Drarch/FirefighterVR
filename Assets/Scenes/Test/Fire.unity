@@ -113,6 +113,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &10135099 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114922350454281184, guid: 4c7aa159f677699469842b68d0078597,
+    type: 2}
+  m_PrefabInternal: {fileID: 462455905}
+  m_Script: {fileID: 11500000, guid: bc839f2bf1f97604f8d77082b3133cdf, type: 3}
 --- !u!1 &62789040
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,7 +944,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14606
+  m_Name: pb_Mesh22582
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -1417,6 +1423,12 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &333554426 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114922350454281184, guid: 4c7aa159f677699469842b68d0078597,
+    type: 2}
+  m_PrefabInternal: {fileID: 1766515096}
+  m_Script: {fileID: 11500000, guid: bc839f2bf1f97604f8d77082b3133cdf, type: 3}
 --- !u!1 &341371117
 GameObject:
   m_ObjectHideFlags: 0
@@ -6294,6 +6306,11 @@ Prefab:
       propertyPath: m_Name
       value: Crate R
       objectReference: {fileID: 0}
+    - target: {fileID: 114922350454281184, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: heatRate
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c7aa159f677699469842b68d0078597, type: 2}
   m_IsPrefabParent: 0
@@ -8623,7 +8640,7 @@ Prefab:
     - target: {fileID: 198028761852572586, guid: 4c7aa159f677699469842b68d0078597,
         type: 2}
       propertyPath: randomSeed
-      value: 753171905
+      value: 1797676068
       objectReference: {fileID: 0}
     - target: {fileID: 198007746417739572, guid: 4c7aa159f677699469842b68d0078597,
         type: 2}
@@ -8633,7 +8650,7 @@ Prefab:
     - target: {fileID: 198007746417739572, guid: 4c7aa159f677699469842b68d0078597,
         type: 2}
       propertyPath: randomSeed
-      value: -1894934847
+      value: 1708696737
       objectReference: {fileID: 0}
     - target: {fileID: 198430708290921038, guid: 4c7aa159f677699469842b68d0078597,
         type: 2}
@@ -8643,7 +8660,7 @@ Prefab:
     - target: {fileID: 198430708290921038, guid: 4c7aa159f677699469842b68d0078597,
         type: 2}
       propertyPath: randomSeed
-      value: 117285279
+      value: -2035472721
       objectReference: {fileID: 0}
     - target: {fileID: 198642979085278938, guid: 4c7aa159f677699469842b68d0078597,
         type: 2}
@@ -8653,18 +8670,18 @@ Prefab:
     - target: {fileID: 198642979085278938, guid: 4c7aa159f677699469842b68d0078597,
         type: 2}
       propertyPath: randomSeed
-      value: -809739006
+      value: -881131443
       objectReference: {fileID: 0}
-    - target: {fileID: 198810291507904162, guid: 4c7aa159f677699469842b68d0078597,
+    - target: {fileID: 114922350454281184, guid: 4c7aa159f677699469842b68d0078597,
         type: 2}
-      propertyPath: playOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198810291507904162, guid: 4c7aa159f677699469842b68d0078597,
+      propertyPath: flameableObjectsinRadius.Array.data[0]
+      value: 
+      objectReference: {fileID: 333554426}
+    - target: {fileID: 114922350454281184, guid: 4c7aa159f677699469842b68d0078597,
         type: 2}
-      propertyPath: randomSeed
-      value: -321919778
-      objectReference: {fileID: 0}
+      propertyPath: flameableObjectsinRadius.Array.data[1]
+      value: 
+      objectReference: {fileID: 10135099}
     - target: {fileID: 114922350454281184, guid: 4c7aa159f677699469842b68d0078597,
         type: 2}
       propertyPath: heatRate
@@ -8679,6 +8696,16 @@ Prefab:
         type: 2}
       propertyPath: isOnFire
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198810291507904162, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198810291507904162, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: randomSeed
+      value: 251731003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c7aa159f677699469842b68d0078597, type: 2}
@@ -9398,7 +9425,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1338
+  m_Name: pb_Mesh-25652
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -12810,6 +12837,11 @@ Prefab:
       propertyPath: m_Name
       value: Crate L
       objectReference: {fileID: 0}
+    - target: {fileID: 114922350454281184, guid: 4c7aa159f677699469842b68d0078597,
+        type: 2}
+      propertyPath: heatRate
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c7aa159f677699469842b68d0078597, type: 2}
   m_IsPrefabParent: 0
@@ -13159,7 +13191,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1442
+  m_Name: pb_Mesh-25756
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2

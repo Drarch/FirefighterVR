@@ -26,7 +26,6 @@ public class FlammableEditor : Editor {
             }
             else
             {
-                item.FindObjectInHeatRadius();
                 item.Temperature = item.fireTemperature;
                 item.IsOnFire = true;
                 item.StartFire();

@@ -7,6 +7,7 @@ using UnityEngine;
 public class Flammable : MonoBehaviour
 {
     public List<ParticleSystem> psFire;
+    [SerializeField]
     public List<Flammable> flameableObjectsinRadius;
 
     public float heatRadius = 5.0f;
@@ -51,10 +52,7 @@ public class Flammable : MonoBehaviour
     
 	void Start ()
     {
-        //StartParticleSystem();
-        FindObjectInHeatRadius();
 
-        //heatRate = heatDisperseRate;
     }
 
     private void StartParticleSystem()
@@ -68,15 +66,20 @@ public class Flammable : MonoBehaviour
         }
     }
 
-    public void FindObjectInHeatRadius()
+    private void FindObjectInHeatRadius()
     {
-        
+        flameableObjectsinRadius.RemoveAll(x => true);
+
         Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, heatRadius, LayerMask.GetMask("Flameable"));
         foreach (Collider c in hitColliders)
         {
             Flammable item = c.GetComponentInParent<Flammable>();
-            if(item != this && !flameableObjectsinRadius.Contains(item))
+            if (item != this && !flameableObjectsinRadius.Contains(item))
+            {
+                //UnityEditor.Undo.RecordObject(this, "Add object in heat radius");
                 flameableObjectsinRadius.Add(item);
+                UnityEditor.EditorUtility.SetDirty(this);
+            }
         }
     }
 
@@ -93,11 +96,16 @@ public class Flammable : MonoBehaviour
 
     private void SpreadFire(bool onFire)
     {
-        if(onFire)
+        UnityEditor.Undo.RecordObject(this, "Spread Fire");
+
+        if (onFire)
         {
+            FindObjectInHeatRadius();
+
             this.heatRate += heatFireRate;
             foreach(Flammable f in flameableObjectsinRadius)
             {
+                UnityEditor.Undo.RecordObject(f, "Spread Fire");
                 f.ChangeHeatRate(heatFireRate);
             }
         }
@@ -106,6 +114,7 @@ public class Flammable : MonoBehaviour
             this.heatRate -= heatFireRate;
             foreach (Flammable f in flameableObjectsinRadius)
             {
+                UnityEditor.Undo.RecordObject(f, "Spread Fire");
                 f.ChangeHeatRate(-heatFireRate);
             }
         }
