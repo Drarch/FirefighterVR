@@ -6,14 +6,15 @@ using UnityEngine;
 
 public class Flammable : MonoBehaviour
 {
-    public List<ParticleSystem> psFire;
+    public FireType fireType;
+
     [SerializeField]
     public List<Flammable> flameableObjectsinRadius;
 
     public float heatRadius = 5.0f;
     //public float heatDisperseRate = -0.5f;
     public float heatFireRate = 1.0f;
-    [SerializeField] //For test only
+    [SerializeField]
     private float heatRate = 0.0f;
 
     [SerializeField]
@@ -49,10 +50,19 @@ public class Flammable : MonoBehaviour
             SetFireParticle(value);
         }
     }
-    
-	void Start ()
-    {
 
+    public List<ParticleSystem> psFire;
+    
+
+    private void Awake()
+    {
+        CheckTemperature();
+        SetFireParticle(IsOnFire);
+    }
+
+    private void Update ()
+    {
+        this.Temperature += heatRate;
     }
 
     private void StartParticleSystem()
@@ -81,17 +91,6 @@ public class Flammable : MonoBehaviour
                 UnityEditor.EditorUtility.SetDirty(this);
             }
         }
-    }
-
-    private void Awake()
-    {
-        CheckTemperature();
-        SetFireParticle(IsOnFire);
-    }
-
-    void Update ()
-    {
-        this.Temperature += heatRate;
     }
 
     private void SpreadFire(bool onFire)
