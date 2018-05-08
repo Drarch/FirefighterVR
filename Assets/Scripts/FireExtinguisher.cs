@@ -28,11 +28,15 @@ public class FireExtinguisher : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        Debug.LogFormat("Hited {0}", other.name);
         Extinguish(other.gameObject.GetComponentInParent<Flammable>());
     }
 
     private void Extinguish(Flammable item)
     {
-        item.Temperature -= extinguishRateDictionary[item.fireType];
+        if (item != null)
+        {
+            item.Temperature -= extinguishRateDictionary[item.fireType];
+        }
     }
 }

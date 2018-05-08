@@ -276,10 +276,10 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1657470626935798}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 10
+  m_Drag: 10
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -307,8 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc839f2bf1f97604f8d77082b3133cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  psFire:
-  - {fileID: 198007746417739572}
+  fireType: 0
   flameableObjectsinRadius: []
   heatRadius: 5
   heatFireRate: 1
@@ -317,6 +316,8 @@ MonoBehaviour:
   fireTemperature: 600
   maxTemperature: 1000
   isOnFire: 0
+  psFire:
+  - {fileID: 198007746417739572}
 --- !u!198 &198007746417739572
 ParticleSystem:
   m_ObjectHideFlags: 1
