@@ -4,7 +4,7 @@
 
     public class FireExtinguisher_Sprayer_VR : VRTK_InteractableObject
     {
-        public FireExtinguisher_Base baseCan;
+        public FireExtinguisher_Base_VR baseCan;
         public float breakDistance = 0.12f;
         public float maxSprayPower = 5f;
 

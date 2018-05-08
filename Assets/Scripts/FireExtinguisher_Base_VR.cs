@@ -6,7 +6,7 @@
     public class FireExtinguisher_Base_VR : VRTK_InteractableObject
     {
         public Animation leverAnimation;
-        public FireExtinguisher_Sprayer sprayer;
+        public FireExtinguisher_Sprayer_VR sprayer;
         
         private VRTK_ControllerEvents controllerEvents;
 
