@@ -113,11 +113,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="-14.382178"
-     inkscape:cy="419.10796"
+     inkscape:zoom="2.8"
+     inkscape:cx="322.02348"
+     inkscape:cy="801.81355"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
@@ -138,7 +138,8 @@
   <g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="background">
+     inkscape:label="background"
+     style="display:inline">
     <rect
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98039216"
        id="rect4896"
@@ -569,6 +570,11 @@
          x="44.197128"
          y="64.418655"
          style="text-align:start;text-anchor:start;stroke-width:0.26458332"
-         id="tspan4879">Rozmiary i ilość pomieszczeń jeszcze do przemyślenia</tspan></text>
+         id="tspan4879">Rozmiary i ilość pomieszczeń jeszcze do przemyślenia</tspan><tspan
+         sodipodi:role="line"
+         x="44.197128"
+         y="68.828377"
+         style="text-align:start;text-anchor:start;stroke-width:0.26458332"
+         id="tspan4898">Winda*</tspan></text>
   </g>
 </svg>
