@@ -568,10 +568,25 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 198952476845464624, guid: aadc85bd379d25b49b647ffed4ac3e7c,
+    - target: {fileID: 65083502374822566, guid: aadc85bd379d25b49b647ffed4ac3e7c,
         type: 2}
-      propertyPath: LightsModule.light
-      value: 
+      propertyPath: m_Center.x
+      value: 1.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 65083502374822566, guid: aadc85bd379d25b49b647ffed4ac3e7c,
+        type: 2}
+      propertyPath: m_Center.z
+      value: 0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 65083502374822566, guid: aadc85bd379d25b49b647ffed4ac3e7c,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 65083502374822566, guid: aadc85bd379d25b49b647ffed4ac3e7c,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 1.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aadc85bd379d25b49b647ffed4ac3e7c, type: 2}
